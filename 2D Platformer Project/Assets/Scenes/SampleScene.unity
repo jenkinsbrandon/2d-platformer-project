@@ -176,7 +176,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 20.046999
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 674984401}
   - component: {fileID: 674984400}
   m_Layer: 0
-  m_Name: MapGenerator
+  m_Name: Testing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -232,12 +232,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 674984399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3a209392d81b0347b80d8e1c21ab078, type: 3}
+  m_Script: {fileID: 11500000, guid: 97b3c99247a03b1409d2921a9fb8fb77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapTileGameObject: {fileID: 8387963692198315203, guid: 3d96afc26d9e61d4b8c8c33d037602f7, type: 3}
-  mapWidth: 8
-  mapHeight: 8
+  row: 20
+  col: 10
+  size: 10
 --- !u!4 &674984401
 Transform:
   m_ObjectHideFlags: 0
