@@ -8,7 +8,7 @@ public class MapGrid
     private int height;
     private float cellSize;
     private Vector3 startGridPosition;
-    private int[,] mapGridArray;
+    private bool[,] mapGridArray;
 
     private TextMesh[,] debugTextArray;
 
@@ -19,7 +19,7 @@ public class MapGrid
         cellSize = p_cellSize;
         startGridPosition = p_startGridPosition;
 
-        mapGridArray = new int[width, height];
+        mapGridArray = new bool[width, height];
         debugTextArray = new TextMesh[width,height];
 
         for (int x = 0; x < mapGridArray.GetLength(0); x++)
@@ -50,7 +50,7 @@ public class MapGrid
         y = Mathf.FloorToInt( (worldPosition-startGridPosition).y / cellSize);
     }
 
-    public void SetValue(int x, int y, int value)
+    public void SetValue(int x, int y, bool value)
     {
         if(x >= 0 && y >= 0 && x < width && y < height)
         {
@@ -59,14 +59,14 @@ public class MapGrid
         }
     }
 
-    public void SetValue( Vector3 worldPosition, int value)
+    public void SetValue( Vector3 worldPosition, bool value)
     {
         int x,y;
         GetXY(worldPosition, out x, out y);
         SetValue(x,y,value);
     }
 
-    public int GetValue( int x, int y)
+    public bool GetValue( int x, int y)
     {
         if(x >= 0 && y >= 0 && x < width && y < height)
         {
@@ -74,11 +74,11 @@ public class MapGrid
         }
         else
         {
-            return -1;
+            return false;
         }
     }
 
-    public int GetValue(Vector3 worldPosition)
+    public bool GetValue(Vector3 worldPosition)
     {
         int x,y;
         GetXY(worldPosition, out x, out y);

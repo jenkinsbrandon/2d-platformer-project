@@ -22,7 +22,7 @@ public class TestingMap : MonoBehaviour
     {
         if( Input.GetMouseButtonDown(0))
         {
-            grid.SetValue(Camera.main.ScreenToWorldPoint(Input.mousePosition), grid.GetValue(Camera.main.ScreenToWorldPoint(Input.mousePosition)) + 1);
+            grid.SetValue(Camera.main.ScreenToWorldPoint(Input.mousePosition), !grid.GetValue(Camera.main.ScreenToWorldPoint(Input.mousePosition)));
         }
 
         if( Input.GetMouseButtonDown(1))
