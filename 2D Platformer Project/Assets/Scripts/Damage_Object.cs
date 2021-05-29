@@ -1,14 +1,19 @@
 ﻿/// <summary>
 /// This class handles damage objects (example projectiles)
 /// </summary>
-public class Damage_Object
+
+namespace OurVideoGame 
 {
 	using System;
 
-	double objectDamageValue;
-
-	public Damage_Object(double newObjectDamageValue)
+	public class Damage_Object
 	{
-		this.objectDamageValue = newObjectDamageValue;
+
+		double objectDamageValue;
+
+		public Damage_Object(double newObjectDamageValue)
+		{
+			this.objectDamageValue = newObjectDamageValue;
+		}
 	}
 }
