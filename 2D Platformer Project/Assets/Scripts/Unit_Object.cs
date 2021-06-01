@@ -6,7 +6,7 @@ namespace OurVideoGame
 {
 	using System;
 	using UnityEngine;
-	public class Unit_Object : MonoBehaviour
+	abstract public class Unit_Object : MonoBehaviour
 	{
 		private double unitAttackDamage;
 		private double unitCurrentHealth;
@@ -37,9 +37,7 @@ namespace OurVideoGame
 			set => this.unitMaxHealth = value;
 		}
 
-		// Create an attack_object and throw it into the world.
-		void Unit_Attack()
-		{
-		}
+		// Create an attack_object and throw it into the world.	
+		abstract public void Unit_Attack();
 	}
 }

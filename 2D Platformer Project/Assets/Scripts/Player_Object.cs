@@ -1,10 +1,12 @@
 ﻿namespace OurVideoGame
 {
 	using System;
-	public class Player_Object : Unit_Object
-	{
+    using UnityEngine;
 
+    public class Player_Object : Unit_Object
+	{
 		double movespeedModifier;
+
 
 		public Player_Object(double newAttackDamage, double newMaxHealth) : base(newAttackDamage, newMaxHealth)
 		{
@@ -18,5 +20,18 @@
 
 			set => this.movespeedModifier = value;
 		}
+
+        private void Update()
+        {
+            if (Input.GetKeyDown("space"))
+            {
+				Unit_Attack();
+            }
+        }
+
+        public override void Unit_Attack()
+        {
+
+        }
 	}
 }
