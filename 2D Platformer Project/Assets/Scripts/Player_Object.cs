@@ -1,19 +1,37 @@
-﻿public class Player_Object : Unit_Object
+﻿namespace OurVideoGame
 {
 	using System;
+    using UnityEngine;
 
-	double movespeedModifier;
-
-	public Player_Object() : base()
+    public class Player_Object : Unit_Object
 	{
-		// Means a unit will move at 100% of the base normal speed.
-		this.movespeedModifier = 100.0;	
+		double movespeedModifier;
+		Weapon_Object currentWeapon;
+
+		public Player_Object(double newAttackDamage, double newMaxHealth) : base(newAttackDamage, newMaxHealth)
+		{
+			// Means a unit will move at 100% of the base normal speed.
+			this.movespeedModifier = 1;
+		}
+
+		public double MovespeedModifier
+		{
+			get => this.movespeedModifier;
+
+			set => this.movespeedModifier = value;
+		}
+
+        private void Update()
+        {
+            if (Input.GetKeyDown("space"))
+            {
+				Unit_Attack();
+            }
+        }
+
+        public override void Unit_Attack()
+        {
+
+        }
 	}
-
-	public double MovespeedModifier
-    {
-		get => this.movespeedModifier;
-
-		set => this.movespeedModifier = value;
-    }
 }

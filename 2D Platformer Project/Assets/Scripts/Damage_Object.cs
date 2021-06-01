@@ -1,14 +1,33 @@
 ﻿/// <summary>
 /// This class handles damage objects (example projectiles)
 /// </summary>
-public class Damage_Object
+
+namespace OurVideoGame 
 {
 	using System;
+	using System.Collections;
+	using UnityEngine;
 
-	double objectDamageValue;
-
-	public Damage_Object(double newObjectDamageValue)
+	public class Damage_Object : MonoBehaviour
 	{
-		this.objectDamageValue = newObjectDamageValue;
+		double objDmgVal;
+		private float projectileSpeed = 20f;
+		private Rigidbody2D dmgObjRB;
+
+        private void Start()
+		{
+			dmgObjRB.velocity = transform.right * projectileSpeed + transform.up * projectileSpeed;
+        }
+
+        private void OnTriggerEnter2D(Collider2D hitInfo)
+        {
+			Debug.Log(hitInfo.name);
+			Destroy(gameObject);
+        }
+
+        public Damage_Object(double newObjectDamageValue)
+		{
+			this.objDmgVal = newObjectDamageValue;
+		}
 	}
 }
