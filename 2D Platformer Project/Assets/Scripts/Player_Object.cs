@@ -6,7 +6,7 @@
     public class Player_Object : Unit_Object
 	{
 		double movespeedModifier;
-		Weapon_Object = currentWeapon;
+		Weapon_Object currentWeapon;
 
 		public Player_Object(double newAttackDamage, double newMaxHealth) : base(newAttackDamage, newMaxHealth)
 		{

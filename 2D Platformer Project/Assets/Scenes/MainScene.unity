@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 241109033}
   - component: {fileID: 241109034}
   - component: {fileID: 241109035}
+  - component: {fileID: 241109036}
   m_Layer: 0
   m_Name: VisiblePlayerObject
   m_TagString: CurrentPlayer
@@ -350,3 +351,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &241109036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241109030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f3b4f5c9b037584aa5c1a8e4e13a018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 0}
+  bulletPrefab: {fileID: 0}
+  weaponDamage: 0

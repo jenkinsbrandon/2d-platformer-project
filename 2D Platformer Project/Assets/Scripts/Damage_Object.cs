@@ -11,17 +11,18 @@ namespace OurVideoGame
 	public class Damage_Object : MonoBehaviour
 	{
 		double objDmgVal;
-		Rigidbody2D objRigidbody;
-		private Sprite dmgObjSprite;
+		private float projectileSpeed = 20f;
+		private Rigidbody2D dmgObjRB;
 
         private void Start()
-		{ 
-			dmgObjSprite = Resources.Load("Assets/Materials/DamageObjectSprite") as Sprite;
+		{
+			dmgObjRB.velocity = transform.right * projectileSpeed + transform.up * projectileSpeed;
         }
 
-        private void Update()
+        private void OnTriggerEnter2D(Collider2D hitInfo)
         {
-			objRigidbody.AddForce(Vector3.up * 10 * Time.deltaTime);
+			Debug.Log(hitInfo.name);
+			Destroy(gameObject);
         }
 
         public Damage_Object(double newObjectDamageValue)
