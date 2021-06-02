@@ -12,10 +12,10 @@ namespace OurVideoGame
 
         private void Update()
         {
-            /*if(Input.GetButtonDown("space"))
+            if(Input.GetButtonDown("Fire1"))
             {
                 ShootWeapon();
-            }*/
+            }
         }
 
         private void ShootWeapon()
