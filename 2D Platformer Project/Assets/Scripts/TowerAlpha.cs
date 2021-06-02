@@ -16,7 +16,7 @@ public class TowerAlpha : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if( Input.GetMouseButtonDown(0) )
+        if( Input.GetMouseButton(0) )
         {
             testPFT.Create(towerProjectileStart, Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
