@@ -7,6 +7,7 @@
 	{
 		double movespeedModifier;
 		Weapon_Object currentWeapon;
+		TowerObject currentTower;
 
 		public Player_Object(double newAttackDamage, double newMaxHealth) : base(newAttackDamage, newMaxHealth)
 		{

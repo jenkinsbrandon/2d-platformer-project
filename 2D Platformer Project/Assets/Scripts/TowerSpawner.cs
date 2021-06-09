@@ -8,29 +8,25 @@ public class TowerSpawner : MonoBehaviour
     //TODO: CHANGE THIS TO CHANGE FOR USER INPUT SO WE CAN USE THE SAME SCRIPT FOR ALL
     public GameObject towerPrefab;
     public TowerObject towerListObject;
+        public Camera curCamera;
 
     public int towerSelection = 0;
-
-
-
 
      List<TowerObject> towerList = new List<TowerObject>();
 
     // Update is called once per frame
     void Update()
     {
-        if( Input.GetMouseButtonDown(1) && IsTowerInProximity(Camera.main.ScreenToWorldPoint(Input.mousePosition)))
+        if(Input.GetMouseButtonDown(1) && IsTowerInProximity(curCamera.ScreenToWorldPoint(Input.mousePosition)))
         {
-            towerListObject = new TowerObject(100,150,20,towerPrefab);
+                towerListObject = new TowerObject(100,150,20,towerPrefab);
 
-            towerListObject.SpawnTower(new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0));
-            towerList.Add(towerListObject);
-            Debug.Log(towerListObject.MaxHealth);
-            
-            
+                //towerListObject.SpawnTower(new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0));
+                towerListObject.SpawnTower(new Vector3(transform.position.x, transform.position.y, 0));
+                towerList.Add(towerListObject);
+                Debug.Log(towerListObject.MaxHealth);         
         }
     }
-
 
     //TODO: LATER CHANGE THIS TO DIFFERNT TOWER PROXIMITY DEPENDING ON TOWER TYPE
     private bool IsTowerInProximity(Vector3 mousePosition)

@@ -9,7 +9,6 @@ namespace OurVideoGame
 
 	public class TowerObject : Unit_Object
     {
-        double movespeedModifier;
         private Vector3 towerProjectileStart;
         public ProjectileFireTest testPFT;
         private double minimumTowerProximity;
@@ -19,7 +18,6 @@ namespace OurVideoGame
 
         public TowerObject(double newAttackDamage, double newMaxHealth, double pminimumTowerProximity, GameObject ptowerPrefab) : base(newAttackDamage, newMaxHealth)
         {
-            this.movespeedModifier = 0;
             this.minimumTowerProximity = pminimumTowerProximity;
             this.towerPrefab = ptowerPrefab;
         }
@@ -40,9 +38,5 @@ namespace OurVideoGame
         {
 
         }
-
     }
-
-    
-
 }

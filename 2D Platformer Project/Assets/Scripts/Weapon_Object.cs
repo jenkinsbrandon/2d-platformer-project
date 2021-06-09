@@ -7,7 +7,8 @@ namespace OurVideoGame
     class Weapon_Object : MonoBehaviour
     {
         public Transform firePoint;
-        public GameObject bulletPrefab;
+        //public GameObject bulletPrefab;
+        public GameObject towerPrefab;
         public float weaponDamage;
 
         private void Update()
@@ -20,8 +21,7 @@ namespace OurVideoGame
 
         private void ShootWeapon()
         {
-            // Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            // Instantiate();
+            //Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         }
     }
 }
