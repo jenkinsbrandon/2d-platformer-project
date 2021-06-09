@@ -12,7 +12,7 @@ namespace OurVideoGame
         double movespeedModifier;
         private Vector3 towerProjectileStart;
         public ProjectileFireTest testPFT;
-        private double minimumTowerProximity = 10;
+        private double minimumTowerProximity;
         public Vector3 spawnPosition;
 
         public GameObject towerPrefab;
@@ -30,13 +30,10 @@ namespace OurVideoGame
 			set => this.minimumTowerProximity = value;
 		}
 
-        public bool SpawnTower( Vector3 pspawnPosition )
+        public void SpawnTower( Vector3 pspawnPosition )
         {
-
             Instantiate(towerPrefab, pspawnPosition, Quaternion.identity);
             spawnPosition = pspawnPosition;
-
-            return false;
         }
 
         public override void Unit_Attack()

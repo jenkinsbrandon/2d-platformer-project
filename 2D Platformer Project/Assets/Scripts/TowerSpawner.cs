@@ -13,6 +13,7 @@ public class TowerSpawner : MonoBehaviour
 
 
 
+
      List<TowerObject> towerList = new List<TowerObject>();
 
     // Update is called once per frame
@@ -23,11 +24,13 @@ public class TowerSpawner : MonoBehaviour
             towerListObject = new TowerObject(100,150,20,towerPrefab);
 
             towerListObject.SpawnTower(new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0));
-            // = Instantiate(towerPrefab, new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0), Quaternion.identity);
             towerList.Add(towerListObject);
             Debug.Log(towerListObject.MaxHealth);
+            
+            
+        }
     }
-    }
+
 
     //TODO: LATER CHANGE THIS TO DIFFERNT TOWER PROXIMITY DEPENDING ON TOWER TYPE
     private bool IsTowerInProximity(Vector3 mousePosition)
@@ -35,11 +38,12 @@ public class TowerSpawner : MonoBehaviour
         float distance = 0;
         foreach( TowerObject curObj in towerList)
         {
+            //Find the distance between the chosen spawn position and every other tower
+            //TODO Possibly change to k-d tree structure
             distance =  Mathf.Sqrt( Mathf.Pow( (mousePosition.x - curObj.spawnPosition.x), 2 ) + Mathf.Pow( (mousePosition.y - curObj.spawnPosition.y ),2) );
-            //Debug.Log(distance);
             if(distance < curObj.MinimumTowerProximity)
             {
-                Debug.Log("TOWER TOO CLOSE");
+                Debug.Log("TOWER TOO CLOSE " + curObj.MinimumTowerProximity);
                 return false;
             }
         }
