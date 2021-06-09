@@ -1,4 +1,4 @@
-/// <summary>
+﻿/// <summary>
 /// The superclass object that units (such as the player, enemies, and towers) will inherit.
 /// </summary>
 
