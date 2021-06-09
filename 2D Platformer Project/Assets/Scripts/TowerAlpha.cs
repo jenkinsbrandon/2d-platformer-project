@@ -9,6 +9,7 @@ public class TowerAlpha : MonoBehaviour
 
     private void Awake()
     {
+        //finds the position in which to spawn projectiles
         towerProjectileStart = transform.Find("TowerProjectileStart").position;
     }
 
@@ -16,7 +17,8 @@ public class TowerAlpha : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if( Input.GetMouseButton(0) )
+        //Once left click it shoots
+        if( Input.GetMouseButtonDown(0) )
         {
             testPFT.Create(towerProjectileStart, Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
