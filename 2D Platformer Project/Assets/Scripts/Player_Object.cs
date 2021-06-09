@@ -25,11 +25,16 @@
         {
             if (Input.GetKeyDown("space"))
             {
-				Unit_Attack();
+				// Unit_Attack();
             }
         }
 
         public override void Unit_Attack()
+        {
+
+        }
+
+		public void Place_Tower()
         {
 
         }

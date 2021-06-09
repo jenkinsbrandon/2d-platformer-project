@@ -20,7 +20,8 @@ namespace OurVideoGame
 
         private void ShootWeapon()
         {
-            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            // Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            // Instantiate();
         }
     }
 }
