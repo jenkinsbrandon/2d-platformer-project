@@ -28,6 +28,14 @@ namespace OurVideoGame {
             horizontalInput = Input.GetAxisRaw("Horizontal"); // -1 = left, 1 = right, 0 = nothing pressed
             verticalInput = Input.GetAxisRaw("Vertical"); // -1 = down, 1 = up, 0 = nothing
             isSprinting = Input.GetAxisRaw("Fire3");
+
+            // From https://answers.unity.com/questions/630670/rotate-2d-sprite-towards-moving-direction.html
+            Vector2 moveDirection = GetComponent<Rigidbody2D>().velocity;
+            if (moveDirection != Vector2.zero)
+            {
+                float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            }
         }
 
         void FixedUpdate()
