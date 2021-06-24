@@ -36,7 +36,7 @@ public class TowerSpawner : MonoBehaviour
         {
             //Find the distance between the chosen spawn position and every other tower
             //TODO Possibly change to k-d tree structure
-            distance =  Mathf.Sqrt( Mathf.Pow( (mousePosition.x - curObj.spawnPosition.x), 2 ) + Mathf.Pow( (mousePosition.y - curObj.spawnPosition.y ),2) );
+            distance =  Mathf.Sqrt( Mathf.Pow( (mousePosition.x - curObj.spawnPosition.x), 2) + Mathf.Pow( (mousePosition.y - curObj.spawnPosition.y ), 2) );
             if(distance < curObj.MinimumTowerProximity)
             {
                 Debug.Log("TOWER TOO CLOSE " + curObj.MinimumTowerProximity);
